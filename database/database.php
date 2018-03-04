@@ -1,19 +1,17 @@
 <?php
 
-$config = parse_ini_file('database.ini');
 
-$host = $config['hostname'];
-$username = $config['username'];
-$password = $config['password'];
-$dbname = $config['dbname'];
+return [
 
-$dsn = 'mysql:host='. $host . ';dbname=' . $dbname;
-$pdo = new PDO($dsn, $username, $password);
+	'database' => [
 
+		'name' => 'HOP',
+		'username' => 'root',
+		'password' => 'root',
+		'connection' => 'mysql:host=127.0.0.1',
+		'options' => []
+	]
+];
 
- 
-
-
-require '../index.php';
 
 ?>
