@@ -31,6 +31,15 @@ class QueryBuilder {
 
 	}
 
+	public function findBeerCategory($category) {
+
+		$statement = $this->pdo->prepare("SELECT name, description, type, available from beer WHERE type = '{$category}'");
+
+		$statement->execute();
+
+		return $statement->fetchAll();
+	}
+
 	public function insertBeer($name, $description, $type, $available) {
 
 		$statement = $this->pdo->prepare("INSERT INTO beer (name, description, type, available) VALUES (:name, :description, :type, :available)");

@@ -47,6 +47,13 @@ foreach ($response_format as $key => $value) {
 						if ($styleType === 'name') {
 							$type = $styleInformation;
 						}
+						if ($styleType === 'category') {
+							foreach ($styleInformation as $category_type => $category_name) {
+								if ($category_type === 'name') {
+									$category = $category_name;
+								}
+							}
+						}
 					}
 				}
 			}

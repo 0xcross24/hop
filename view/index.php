@@ -11,9 +11,9 @@ $database = new QueryBuilder(
 	Connection::connectToDb($config['database'])
 );
 
-if (empty($_GET['beer'])) {
+if (empty($_GET['beer']) && empty($_GET['beer_category'])) {
 
-	echo 'Please fill in the blanks';
+	echo "Please fill in the blanks";
 
 	require 'index.view.php';
 
@@ -30,7 +30,7 @@ if (empty($_GET['beer'])) {
 	}
 
 	$beer = $database->findBeer($_GET['beer']);
-	
+
 	foreach ($beer as $information) {
 		$name = $information['name'];
 		$description = $information['description'];
